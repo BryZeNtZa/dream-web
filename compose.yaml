@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+#####################
+# Dream-web service  #
+#####################
+  api:
+    build:
+      context: .
+    container_name: dream-web
+    volumes:
+      - app_data:/usr/src/app
+    environment:
+      PORT: 3000
+    ports:
+      - "3000:3000"
+
+    tty: true
+    restart: always
+    networks:
+      - backend
+      - frontend
+
+#####################
+# Networks          #
+#####################
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+#####################
+# Volumes           #
+#####################
+volumes:
+  app_data:

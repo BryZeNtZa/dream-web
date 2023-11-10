@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Suspense } from "react";
-import NavbarFragment from "./fragments/NavbarFragment"
-import PageFragment from "./fragments/PageFragment"
 import './globals.css'
 
 
@@ -19,24 +17,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="h-full bg-gray-50 light">
-      <body className="h-full ">
+    <html lang="en">
+      <body className="bg-slate-50">
         <Suspense>
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-          <div className="row app-module-content">
-              <div className="col col-md-2">
-              <NavbarFragment user={''} />
-              </div>
-              <div className="col col-md-10">
-                  <div className="app-module-view">
-                  <PageFragment>{children}</PageFragment>
-                  </div>
-              </div>
+        <main className="justify-between ">
+          <div className="app-module-content">
+              {children}
           </div>
           </main>
         </Suspense>
       </body>
     </html>
-
   )
 }
