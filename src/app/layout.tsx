@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-slate-50">
+      <body className={`${inter.className} bg-slate-50`}>
         <Suspense>
         <main className="justify-between ">
           <div className="app-module-content">

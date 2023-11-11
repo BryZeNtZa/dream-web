@@ -7,7 +7,7 @@ import Image from 'next/image';
 export default function TopNavigationBar({ children }: { children: React.ReactNode }) {
   return (
     <Card>
-      <div className="flex flex-row w-fill justify-start">
+      <div className="flex flex-row w-fill place-items-center">
         <Image
           priority
           src="/images/logo.jpg"
