@@ -3,6 +3,7 @@ import SearchResultBar from "./SearchResultBar";
 import Card from "./Card";
 import TopNavigationBar from "./TopNavigationBar";
 import SearchResult from "./SearchResult";
+import LeftBar from "./LeftBar";
 
 export default function Home({ children }: { children: React.ReactNode }) {
   return (
@@ -11,9 +12,11 @@ export default function Home({ children }: { children: React.ReactNode }) {
 
       </TopNavigationBar>
       <div className="flex flex-row">
-        <div className="p-4 w-64">
+        <div className="p-4 w-80">
           <Card>
-            <p>Le savoir est une arme alors soyons armés jusqu'aux dents</p>
+            <LeftBar>
+              
+            </LeftBar>
           </Card>
         </div>
         <div className="w-full">
@@ -21,7 +24,7 @@ export default function Home({ children }: { children: React.ReactNode }) {
 
           </SearchResultBar>
           <SearchResult>
-            
+
           </SearchResult>
         </div>
       </div>
