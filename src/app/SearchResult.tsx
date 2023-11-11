@@ -4,7 +4,7 @@ import './globals.css'
 import Icon from '@mdi/react'
 import { mdiBathtubOutline, mdiBedOutline, mdiHeart, mdiShieldCheck, mdiVectorSquare } from '@mdi/js'
 
-export default function SearchResult({ children }: { children: React.ReactNode }) {
+export default function SearchResult() {
     const items = [
         { id: 1, name: 'bertoua', image: '/images/logo.jpg' },
         { id: 2, name: 'yaounde', image: '/images/logo.jpg' },
@@ -27,16 +27,14 @@ export default function SearchResult({ children }: { children: React.ReactNode }
         <div className="grid grid-cols-1 md:grid-cols-4">
             {items.map((id, name, image) => (
                 <div className="p-2 w-96">
-                    <SearchResultItem>
-
-                    </SearchResultItem>
+                    <SearchResultItem/>
                 </div>
             ))}
         </div>
     )
 }
 
-function SearchResultItem({ children }: { children: React.ReactNode }) {
+function SearchResultItem() {
     const imageLink = '/images/house.jpg';
     const price = '$ 5,000';
     const address1 = 'Bertoua, Cameroon';
@@ -60,8 +58,8 @@ function SearchResultItem({ children }: { children: React.ReactNode }) {
                 <div className="flex flex-row pt-8 pb-4 justify-content-center place-items-center">
                     <p className="text-blue-700">{price}</p>
                     <div className="flex flex-row ml-auto">
-                        <VerifiedItem> </VerifiedItem>
-                        <LikeItem> </LikeItem>
+                        <VerifiedItem verified={false}/>
+                        <LikeItem like={false}/>
                     </div>
                 </div>
                 <div>
@@ -90,8 +88,7 @@ function SearchResultItem({ children }: { children: React.ReactNode }) {
         </Card>
     )
 }
-function VerifiedItem({ children }: { children: React.ReactNode }) {
-    const verified = false
+function VerifiedItem({verified}: { verified: boolean }) {
     return (
         <div className="flex flex-row place-items-center bg-green-100 px-2 py-1 rounded-lg">
             <Icon path={mdiShieldCheck} size={1} color='#3FAF3F' className="mr-2" />
@@ -101,8 +98,7 @@ function VerifiedItem({ children }: { children: React.ReactNode }) {
         </div>
     )
 }
-function LikeItem({ children }: { children: React.ReactNode }) {
-    const verified = false
+function LikeItem({ like }: { like: boolean }) {
     return (
         <div className="flex flex-row place-items-center bg-red-100 ml-1 p-1 rounded-lg">
             <Icon path={mdiHeart} size={1} color='#FF3F3F' className="" />

@@ -2,7 +2,7 @@ import { Switch } from '@headlessui/react'
 import './globals.css'
 import React, { useState } from 'react'
 
-export default function SearchFilters({ children }: { children: React.ReactNode }) {
+export default function SearchFilters() {
     return (
         <div className="p-4 flex flex-row">
             <div className="">
@@ -13,15 +13,13 @@ export default function SearchFilters({ children }: { children: React.ReactNode 
                 <p className="text-gray-500">We d <b className="text-blue-700">36</b> Results for You</p>
             </div>
             <div className="ml-auto">
-                <VerifiedOnly>
-
-                </VerifiedOnly>
+                <VerifiedOnly/>
             </div>
         </div>
     )
 }
 
-function VerifiedOnly({children}: {children: React.ReactNode }){
+function VerifiedOnly(){
     const [enabled, setEnabled] = useState(false)
 
   return (

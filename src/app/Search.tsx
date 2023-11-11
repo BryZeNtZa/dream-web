@@ -1,6 +1,6 @@
 import './globals.css'
 
-export default function Search({ children }: { children: React.ReactNode }) {
+export default function Search() {
     return (
         <form>
             <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>

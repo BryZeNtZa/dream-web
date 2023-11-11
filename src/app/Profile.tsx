@@ -1,7 +1,7 @@
 import './globals.css'
 import Image from 'next/image';
 
-export default function Profile({ children }: { children: React.ReactNode }) {
+export default function Profile() {
     return (
         <div className="flex flex-row place-items-center">
         <Image

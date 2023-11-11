@@ -6,7 +6,7 @@ import { Fragment, useState } from 'react'
 import Icon from '@mdi/react'
 import { mdiSort } from '@mdi/js';
 
-export default function SearchResultBar({ children }: { children: React.ReactNode }) {
+export default function SearchResultBar() {
     return (
         <div className="p-4 flex flex-row place-items-center">
             <div className="">
@@ -17,20 +17,17 @@ export default function SearchResultBar({ children }: { children: React.ReactNod
                 <p className="text-gray-500">We Found <span className="text-blue-700">36</span> Results for You</p>
             </div>
             <div className="flex flex-row ml-auto place-items-center">
-                <BuyOrRentFilter>
-                </BuyOrRentFilter>
+                <BuyOrRentFilter/>
                 <div className="px-6" />
-                <VerifiedOnlyFilter>
-                </VerifiedOnlyFilter>
+                <VerifiedOnlyFilter/>
                 <div className="px-6" />
-                <SortByFilter>
-                </SortByFilter>
+                <SortByFilter/>
                 <div className="px-6" />
             </div>
         </div>
     )
 }
-function BuyOrRentFilter({ children }: { children: React.ReactNode }) {
+function BuyOrRentFilter() {
     const [enabled, setEnabled] = useState(false)
 
     return (
@@ -54,7 +51,7 @@ function BuyOrRentFilter({ children }: { children: React.ReactNode }) {
         </Switch>
     )
 }
-function VerifiedOnlyFilter({ children }: { children: React.ReactNode }) {
+function VerifiedOnlyFilter() {
     const [enabled, setEnabled] = useState(false)
 
     return (
@@ -76,7 +73,7 @@ function VerifiedOnlyFilter({ children }: { children: React.ReactNode }) {
         </Switch.Group>
     )
 }
-function SortByFilter({ children }: { children: React.ReactNode }) {
+function SortByFilter() {
 
     const filterOption = [
         { id: 1, name: 'Durward Reynolds', unavailable: false },
